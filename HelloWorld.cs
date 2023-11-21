@@ -7,7 +7,7 @@ public class HelloWorld : MonoBehaviour
 {
     public int health = 5;
     public int level = 2;
-    public float speed = 4;
+    public float speed = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +23,11 @@ public class HelloWorld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z >= 10)
+        if (transform.position.z >= 3)
         {
             speed = -5;
         }
-        else if (transform.position.z <= 0)
-        {
-            speed = 5;
-        }
+        speed += 0.03f;
 
         Vector3 newPosition = transform.position;
         newPosition.z += speed * Time.deltaTime;
